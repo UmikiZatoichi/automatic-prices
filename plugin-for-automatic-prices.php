@@ -1,11 +1,11 @@
 <?php
 //Api MiIndicador.cl
 	$apiUrl = 'http://www.mindicador.cl/api';
-    //Es necesario tener habilitada la directiva allow_url_fopen para usar file_get_contents
+    //Is necesary active allow_url_fopen for use file_get_contents
     if ( ini_get('allow_url_fopen') ) {
         $json = file_get_contents($apiUrl);
     } else {
-        //De otra forma utilizamos cURL
+        //Or use cURL
         $curl = curl_init($apiUrl);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $json = curl_exec($curl);
